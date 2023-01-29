@@ -5,11 +5,12 @@ import {
   DrawerItemList,
   DrawerItem,
 } from "@react-navigation/drawer";
-import { Button, SafeAreaView } from "react-native";
+import { View, SafeAreaView } from "react-native";
 import HomeScreen from "../../views/HomeScreen/HomeScreen";
 import NotificationsScreen from "../../views/NotificationsScreen";
 import PerfilContainer from "../perfilContainer/PerfilContainer";
 import { customDrawerStyle } from "./customDrawerStyle";
+import Icon from "react-native-dynamic-vector-icons";
 
 function CustomDrawerContent(props) {
   return (
@@ -23,7 +24,37 @@ function CustomDrawerContent(props) {
         forceInset={{ top: "always", horizontal: "never" }}
       >
         <DrawerItemList {...props} />
-        <DrawerItem label="Help" onPress={() => alert("Link to help")} />
+        <View
+          style={customDrawerStyle.separadorContainer}
+        >
+          <View
+            style={customDrawerStyle.separador}
+          />
+        </View>
+        <DrawerItem
+          label="Ayuda"
+          onPress={() => alert("ayuda")}
+          icon={({ focused, size }) => (
+            <Icon
+              name="help-circle"
+              type="Feather"
+              size={size}
+              color={focused ? "#484848" : "#7A7A7A"}
+            />
+          )}
+        />
+        <DrawerItem
+          label="Cerrar sesión"
+          onPress={() => alert("saliste")}
+          icon={({ focused, size }) => (
+            <Icon
+              name="log-out"
+              type="Feather"
+              size={size}
+              color={focused ? "#484848" : "#7A7A7A"}
+            />
+          )}
+        />
       </SafeAreaView>
     </DrawerContentScrollView>
   );
@@ -49,10 +80,81 @@ function CustomDrawer() {
       useLegacyImplementation
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
-      <Drawer.Screen name="Inicio" component={HomeScreen} />
-      <Drawer.Screen name="Mis viajes" component={NotificationsScreen} />
-      <Drawer.Screen name="Mensajes" component={NotificationsScreen} />
-      <Drawer.Screen name="Configuración" component={NotificationsScreen} />
+      <Drawer.Screen
+        options={{
+          title: "Inicio",
+          drawerIcon: ({ focused, size }) => (
+            <Icon
+              name="home"
+              type="FontAwesome5"
+              size={size}
+              color={focused ? "#484848" : "#7A7A7A"}
+            />
+          ),
+        }}
+        name="Inicio"
+        component={HomeScreen}
+      />
+      <Drawer.Screen
+        options={{
+          title: "Mis viajes",
+          drawerIcon: ({ focused, size }) => (
+            <Icon
+              name="road"
+              type="FontAwesome5"
+              size={size}
+              color={focused ? "#484848" : "#7A7A7A"}
+            />
+          ),
+        }}
+        name="Mis viajes"
+        component={NotificationsScreen}
+      />
+      <Drawer.Screen
+        options={{
+          title: "Mensajes",
+          drawerIcon: ({ focused, size }) => (
+            <Icon
+              name="mail-bulk"
+              type="FontAwesome5"
+              size={size}
+              color={focused ? "#484848" : "#7A7A7A"}
+            />
+          ),
+        }}
+        name="Mensajes"
+        component={NotificationsScreen}
+      />
+      <Drawer.Screen
+        options={{
+          title: "Billetera",
+          drawerIcon: ({ focused, size }) => (
+            <Icon
+              name="wallet"
+              type="FontAwesome5"
+              size={size}
+              color={focused ? "#484848" : "#7A7A7A"}
+            />
+          ),
+        }}
+        name="Billetera"
+        component={NotificationsScreen}
+      />
+      <Drawer.Screen
+        options={{
+          title: "Configuración",
+          drawerIcon: ({ focused, size }) => (
+            <Icon
+              name="wrench"
+              type="FontAwesome5"
+              size={size}
+              color={focused ? "#484848" : "#7A7A7A"}
+            />
+          ),
+        }}
+        name="Configuración"
+        component={NotificationsScreen}
+      />
     </Drawer.Navigator>
   );
 }
