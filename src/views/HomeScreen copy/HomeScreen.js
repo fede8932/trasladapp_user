@@ -8,15 +8,7 @@ function HomeScreen({ navigation }) {
   return (
     <View style={homeScreenStyles.container}>
       <MapContainer />
-      <CustomButton
-        Press={navigation.openDrawer}
-        iconName="menu"
-        iconType="MaterialIcons"
-        iconSize={35}
-        iconColor="#C0C0C0"
-        styleContainer="container"
-        styleButton="button"
-      />
+      <CustomButton Navigation={navigation.openDrawer} />
       <SheetContainer />
     </View>
   );

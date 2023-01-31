@@ -3,7 +3,7 @@ import React, { useCallback, useMemo, useRef } from "react";
 
 const SheetContainer = function () {
   const bottomSheetRef = useRef(null);
-  const snapPoints = useMemo(() => ["33%", "100%"], []);
+  const snapPoints = useMemo(() => ["28%", "100%"], []);
   const handleSheetChanges = useCallback((index) => {
     // console.log("handleSheetChanges", index);
   }, []);
