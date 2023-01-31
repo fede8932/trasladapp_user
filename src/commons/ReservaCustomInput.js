@@ -3,11 +3,10 @@ import { View, Text, TextInput } from "react-native";
 import { StyleSheet } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
 
-const CustomInput = function (props) {
+const ReservaCustomInput = function (props) {
   const [border, setBorder] = useState("inputContainer")
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>{props.label}</Text>
       <View style={styles[border]}>
         <Icon
           name={props.icon}
@@ -34,7 +33,7 @@ const CustomInput = function (props) {
   );
 };
 
-export default CustomInput;
+export default ReservaCustomInput;
 
 const styles = StyleSheet.create({
   container: {

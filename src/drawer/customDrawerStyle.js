@@ -13,16 +13,5 @@ export const customDrawerStyle = StyleSheet.create({
   drawerContainer: {
     flex: 1,
     height: ScreenHeight,
-  },
-  separadorContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    margin: 11,
-  },
-  separador: {
-    flex: 1,
-    height: 1,
-    backgroundColor: "#E9E9E9",
-    width: "80%",
-  },
+  }
 });
