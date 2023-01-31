@@ -1,7 +1,7 @@
 import { View, Text, Image } from "react-native";
-import { perfilContainerStyles } from "./perfilContainerStyles";
+import { perfilContainerStyles } from "./perfilStyles";
 
-const PerfilContainer = function () {
+const Perfil = function () {
   return (
     <View style={perfilContainerStyles.container}>
       <Image
@@ -16,4 +16,4 @@ const PerfilContainer = function () {
   );
 };
 
-export default PerfilContainer;
+export default Perfil;

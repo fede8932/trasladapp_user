@@ -7,20 +7,10 @@ import ButtonReserva from "../../commons/ButtonReserva";
 import LinkFavoritos from "../../commons/LinkFavoritos";
 import CustomSeperator from "../../commons/CustomSeperator";
 import DestinationListBox from "../../commons/DestinationListBox";
+import ModalContainer from "../../containers/ModalContainer";
 
-const SheetApp = () => {
-  // ref
-  const bottomSheetRef = useRef(null);
-
-  // variables
-  const snapPoints = useMemo(() => ["37%", "100%"], []);
-
-  // callbacks
-  const handleSheetChanges = useCallback((index) => {
-    // console.log("handleSheetChanges", index);
-  }, []);
-
-  // renders
+const SheetApp = (props) => {
+  const { bottomSheetRef, snapPoints, handleSheetChanges } = props;
   return (
     <View style={sheetAppStyles.container}>
       <BottomSheet
@@ -47,7 +37,8 @@ const SheetApp = () => {
               />
             </View>
             <View style={sheetAppStyles.buttonContainer}>
-              <ButtonReserva
+              <ModalContainer
+                OpenModal={ButtonReserva}
                 text="Ingresa tu destino"
                 styleContainer="containerLonge"
                 iconName="search"
@@ -55,7 +46,8 @@ const SheetApp = () => {
                 iconSize={20}
                 iconColor="#ffe700"
               />
-              <ButtonReserva
+              <ModalContainer
+                OpenModal={ButtonReserva}
                 text="Reserva tu asiento"
                 styleContainer="containerSmall"
                 iconName="calendar"
