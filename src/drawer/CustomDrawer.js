@@ -5,10 +5,10 @@ import {
   DrawerItemList,
   DrawerItem,
 } from "@react-navigation/drawer";
-import { View, SafeAreaView } from "react-native";
+import { SafeAreaView } from "react-native";
 import HomeScreen from "../views/HomeScreen/HomeScreen";
 import NotificationsScreen from "../views/NotificationsScreen";
-import PerfilContainer from "../components/perfilContainer/PerfilContainer";
+import PerfilContainer from "../containers/PerfilContainer";
 import { customDrawerStyle } from "./customDrawerStyle";
 import Icon from "react-native-dynamic-vector-icons";
 import CustomSeperator from "../commons/CustomSeperator";

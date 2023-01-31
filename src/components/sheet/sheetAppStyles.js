@@ -21,7 +21,7 @@ export const sheetAppStyles = StyleSheet.create({
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
-    marginBottom: 10,
+    marginBottom: 1,
   },
   saludoConsulta: {
     width: "65%",
