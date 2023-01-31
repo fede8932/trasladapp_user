@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef } from "react";
+import React from "react";
 import { View, Text, Image } from "react-native";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { sheetAppStyles } from "./sheetAppStyles";

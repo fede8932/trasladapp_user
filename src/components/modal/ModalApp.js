@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal, Text, Pressable, View } from "react-native";
 import { modalAppStyles } from "./modalAppStyles";
+import CustomButton from "../../commons/CustomButton";
 
 const ModalApp = (props) => {
   const {
@@ -31,15 +32,18 @@ const ModalApp = (props) => {
       >
         <View style={modalAppStyles.centeredView}>
           <View style={modalAppStyles.modalView}>
-            <Text style={modalAppStyles.modalText}>Hello World!</Text>
-            <Pressable
-              style={[modalAppStyles.button, modalAppStyles.buttonClose]}
-              onPress={() => {
-                setModalVisible(!modalVisible);
-              }}
-            >
-              <Text style={modalAppStyles.textStyle}>Hide Modal</Text>
-            </Pressable>
+            <View style={modalAppStyles.closeContainer}>
+              <CustomButton
+                Press={() => {
+                  setModalVisible(!modalVisible);
+                }}
+                iconName="close"
+                iconType="MaterialCommunityIcons"
+                iconSize={22}
+                iconColor="#C0C0C0"
+              />
+            </View>
+            <View style={{width: 200, height: 100, backgroundColor: "red"}}></View>
           </View>
         </View>
       </Modal>

@@ -13,7 +13,6 @@ export const modalAppStyles = StyleSheet.create({
       backgroundColor: "white",
       borderTopStartRadius: 20,
       borderTopEndRadius: 20,
-      padding: 35,
       alignItems: "center",
       shadowColor: "#000",
       shadowOffset: {
@@ -41,4 +40,9 @@ export const modalAppStyles = StyleSheet.create({
       marginBottom: 15,
       textAlign: "center",
     },
+    closeContainer: {
+      width: "100%",
+      alignItems: "flex-end",
+      padding: "1%",
+    }
   });

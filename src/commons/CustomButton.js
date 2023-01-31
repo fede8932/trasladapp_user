@@ -3,18 +3,18 @@ import { View, TouchableOpacity, Text } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
 import { StyleSheet } from "react-native";
 
-const ButtonNavigation = function (props) {
-    const { Navigation } = props
+const CustomButton = function (props) {
+    const { Press, iconName, iconSize, IconType, iconColor, styleContainer, styleButton } = props
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={() => Navigation()} style={styles.button}>
-        <Icon name="menu" type="MaterialIcons" size={35} color="#C0C0C0" />
+    <View style={styles[styleContainer]}>
+      <TouchableOpacity onPress={() => Press()} style={styles[styleButton]}>
+        <Icon name={iconName} type={IconType} size={iconSize} color={iconColor} />
       </TouchableOpacity>
     </View>
   );
 };
 
-export default ButtonNavigation;
+export default CustomButton;
 
 const styles = StyleSheet.create({
     container: {
