@@ -1,7 +1,7 @@
 import { View, SafeAreaView, Image, Button } from "react-native";
 import { loginStyles } from "./loginStyles";
 import { LinearGradient } from "expo-linear-gradient";
-import CustomInput from "../../commons/CustomInput";
+import LoginCustomInput from "../../commons/LoginCustomInput";
 import { useState } from "react";
 
 const Login = function () {
@@ -21,7 +21,7 @@ const Login = function () {
         />
       </View>
       <View style={loginStyles.formContainer}>
-        <CustomInput
+        <LoginCustomInput
           label="Usuario"
           placeholder="juancito@imail.com"
           icon="mail"
@@ -29,7 +29,7 @@ const Login = function () {
           value={email}
           onChangeText={(email) => setEmail(email)}
         />
-        <CustomInput
+        <LoginCustomInput
           label="Contraseña"
           placeholder="******"
           icon="people"

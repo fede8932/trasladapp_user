@@ -4,7 +4,7 @@ import LoginContainer from "./src/containers/LoginContainer";
 // import { rootStyles } from "./src/styles/root";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
-import CustomDrawer from "./src/components/drawer/CustomDrawer";
+import CustomDrawer from "./src/drawer/CustomDrawer";
 
 const Drawer = createDrawerNavigator();
 

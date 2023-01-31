@@ -6,11 +6,12 @@ import {
   DrawerItem,
 } from "@react-navigation/drawer";
 import { View, SafeAreaView } from "react-native";
-import HomeScreen from "../../views/HomeScreen/HomeScreen";
-import NotificationsScreen from "../../views/NotificationsScreen";
-import PerfilContainer from "../perfilContainer/PerfilContainer";
+import HomeScreen from "../views/HomeScreen/HomeScreen";
+import NotificationsScreen from "../views/NotificationsScreen";
+import PerfilContainer from "../components/perfilContainer/PerfilContainer";
 import { customDrawerStyle } from "./customDrawerStyle";
 import Icon from "react-native-dynamic-vector-icons";
+import CustomSeperator from "../commons/CustomSeperator";
 
 function CustomDrawerContent(props) {
   return (
@@ -24,13 +25,7 @@ function CustomDrawerContent(props) {
         forceInset={{ top: "always", horizontal: "never" }}
       >
         <DrawerItemList {...props} />
-        <View
-          style={customDrawerStyle.separadorContainer}
-        >
-          <View
-            style={customDrawerStyle.separador}
-          />
-        </View>
+        <CustomSeperator styleContainer="separadorContainer" styleSeparator="separador"/>
         <DrawerItem
           label="Ayuda"
           onPress={() => alert("ayuda")}
