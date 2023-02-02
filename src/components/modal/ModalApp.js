@@ -1,7 +1,9 @@
 import React from "react";
-import { Modal, Text, Pressable, View } from "react-native";
+import { Modal, View, Text } from "react-native";
 import { modalAppStyles } from "./modalAppStyles";
 import CustomButton from "../../commons/CustomButton";
+import AddressContainer from "../../containers/AddressContainer";
+import CustomSeperator from "../../commons/CustomSeperator";
 
 const ModalApp = (props) => {
   const {
@@ -14,6 +16,7 @@ const ModalApp = (props) => {
     iconSize,
     iconType,
     iconColor,
+    close,
   } = props;
   return (
     <View style={modalAppStyles.centeredView}>
@@ -40,10 +43,15 @@ const ModalApp = (props) => {
                 iconName="close"
                 iconType="MaterialCommunityIcons"
                 iconSize={22}
-                iconColor="#C0C0C0"
+                iconColor="#484848"
               />
+              <Text style={modalAppStyles.title}>Tu viaje en TrasladAPP</Text>
             </View>
-            <View style={{width: 200, height: 100, backgroundColor: "red"}}></View>
+            <AddressContainer />
+            <CustomSeperator
+              styleContainer="sheetContainer"
+              styleSeparator="sheetSeparator"
+            />
           </View>
         </View>
       </Modal>
@@ -55,6 +63,7 @@ const ModalApp = (props) => {
         iconSize={iconSize}
         iconColor={iconColor}
         accion={() => {
+          close();
           setModalVisible(true);
         }}
       />

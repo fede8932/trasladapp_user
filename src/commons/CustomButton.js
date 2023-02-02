@@ -19,7 +19,7 @@ export default CustomButton;
 const styles = StyleSheet.create({
     container: {
         position: "absolute",
-        marginTop: 50,
+        marginTop: "10%",
         marginLeft: 10,
     },
     button: {

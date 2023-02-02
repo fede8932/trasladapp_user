@@ -7,7 +7,17 @@ const SheetContainer = function () {
   const handleSheetChanges = useCallback((index) => {
     // console.log("handleSheetChanges", index);
   }, []);
-  return <SheetApp bottomSheetRef={bottomSheetRef} snapPoints={snapPoints} handleSheetChanges={handleSheetChanges} />;
+  const indexCero = () => {
+    bottomSheetRef.current.collapse()
+  }
+  return (
+    <SheetApp
+      bottomSheetRef={bottomSheetRef}
+      snapPoints={snapPoints}
+      handleSheetChanges={handleSheetChanges}
+      indexCero={indexCero}
+    />
+  );
 };
 
 export default SheetContainer;
