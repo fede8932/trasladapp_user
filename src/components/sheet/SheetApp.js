@@ -10,7 +10,7 @@ import DestinationListBox from "../../commons/DestinationListBox";
 import ModalContainer from "../../containers/ModalContainer";
 
 const SheetApp = (props) => {
-  const { bottomSheetRef, snapPoints, handleSheetChanges } = props;
+  const { bottomSheetRef, snapPoints, handleSheetChanges, indexCero } = props;
   return (
     <View style={sheetAppStyles.container}>
       <BottomSheet
@@ -45,6 +45,7 @@ const SheetApp = (props) => {
                 iconType="FontAwesome5"
                 iconSize={20}
                 iconColor="#ffe700"
+                close={indexCero}
               />
               <ModalContainer
                 OpenModal={ButtonReserva}
@@ -54,6 +55,7 @@ const SheetApp = (props) => {
                 iconType="FontAwesome5"
                 iconSize={20}
                 iconColor="#ffe700"
+                close={indexCero}
               />
             </View>
             <View style={sheetAppStyles.favoritosContainer}>
