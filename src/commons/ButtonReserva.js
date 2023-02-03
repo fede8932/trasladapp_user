@@ -6,6 +6,8 @@ const ButtonReserva = function (props) {
   const {
     text,
     styleContainer,
+    styleButton,
+    styleText,
     iconName,
     iconType,
     iconColor,
@@ -14,14 +16,14 @@ const ButtonReserva = function (props) {
   } = props;
   return (
     <View style={styles[styleContainer]}>
-      <TouchableOpacity onPress={() => accion()} style={styles.button}>
+      <TouchableOpacity onPress={() => accion()} style={styles[styleButton]}>
         <Icon
           name={iconName}
           type={iconType}
           size={iconSize}
           color={iconColor}
         />
-        <Text style={styles.texto}>{text}</Text>
+        <Text style={styles[styleText]}>{text}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
   containerLonge: {
     width: "92%",
   },
-  button: {
+  reserva: {
     backgroundColor: "#F3F3F3",
     borderRadius: 10,
     paddingHorizontal: 9,
@@ -44,7 +46,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: 37,
   },
-  texto: {
+  textoReserva: {
     marginHorizontal: 7,
+  },
+  confirmacion: {
+    backgroundColor: "#FFD919",
+    borderRadius: 7,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    height: 45,
+  },
+  textoConfirmacion: {
+    color: "#494949",
+    fontSize: 20,
+    fontWeight: "500",
+    letterSpacing: 1.5,
   },
 });
