@@ -56,4 +56,10 @@ export const modalAppStyles = StyleSheet.create({
     color: "#484848",
     fontWeight: "600",
   },
+  submitContainer: {
+    marginBottom: 20,
+    width: "90%",
+    justifyContent: "center",
+    alignItems: "center",
+  }
 });

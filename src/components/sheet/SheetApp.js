@@ -41,21 +41,27 @@ const SheetApp = (props) => {
                 OpenModal={ButtonReserva}
                 text="Ingresa tu destino"
                 styleContainer="containerLonge"
+                styleButton="reserva"
+                styleText="textoReserva"
                 iconName="search"
                 iconType="FontAwesome5"
                 iconSize={20}
                 iconColor="#ffe700"
                 close={indexCero}
+                modo="Tu viaje en TrasladAPP"
               />
               <ModalContainer
                 OpenModal={ButtonReserva}
                 text="Reserva tu asiento"
                 styleContainer="containerSmall"
+                styleButton="reserva"
+                styleText="textoReserva"
                 iconName="calendar"
                 iconType="FontAwesome5"
                 iconSize={20}
                 iconColor="#ffe700"
                 close={indexCero}
+                modo="Encontrá tu destino"
               />
             </View>
             <View style={sheetAppStyles.favoritosContainer}>

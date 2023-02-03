@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { View, TextInput } from "react-native";
 import { StyleSheet } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
@@ -12,8 +12,12 @@ const CustomInput = function (props) {
     placeholder,
     onChangeText,
     value,
+    autoFocus,
   } = props;
   const [border, setBorder] = useState("inputContainer");
+  useEffect(() => {
+    autoFocus ? setBorder("inputContainerActive") : null;
+  }, []);
   return (
     <View style={styles.container}>
       <View style={styles[border]}>
@@ -53,7 +57,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#F3F3F3",
     backgroundColor: "#F3F3F3",
-    height: 42,
+    height: 39,
     flexDirection: "row",
     alignItems: "center",
     paddingLeft: 7,
@@ -72,7 +76,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#FFD502",
     backgroundColor: "#FFFFFF",
-    height: 42,
+    height: 39,
     flexDirection: "row",
     alignItems: "center",
     paddingLeft: 7,

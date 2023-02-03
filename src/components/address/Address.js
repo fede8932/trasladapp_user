@@ -3,7 +3,7 @@ import Icon from "react-native-dynamic-vector-icons";
 import CustomInput from "../../commons/CustomInput.js";
 import { addressStyles } from "./addressStyles.js";
 
-const Address = function ( props ) {
+const Address = function (props) {
   return (
     <View style={addressStyles.container}>
       <View style={addressStyles.formContainer}>
@@ -30,6 +30,7 @@ const Address = function ( props ) {
             iconSize={15}
             iconColor="#F0500B"
             placeholder="Ingresa el destino del viaje"
+            autoFocus={true}
           />
           <Icon
             name="add"

@@ -1,9 +1,12 @@
 import React from "react";
-import { Modal, View, Text } from "react-native";
+import { Modal, View, Text, ScrollView } from "react-native";
 import { modalAppStyles } from "./modalAppStyles";
 import CustomButton from "../../commons/CustomButton";
 import AddressContainer from "../../containers/AddressContainer";
 import CustomSeperator from "../../commons/CustomSeperator";
+import DestinationListBox from "../../commons/DestinationListBox";
+import ButtonReserva from "../../commons/ButtonReserva";
+import DestinyListContainer from "../../containers/DestinyListContainer";
 
 const ModalApp = (props) => {
   const {
@@ -12,11 +15,14 @@ const ModalApp = (props) => {
     OpenModal,
     text,
     styleContainer,
+    styleButton,
+    styleText,
     iconName,
     iconSize,
     iconType,
     iconColor,
     close,
+    modo,
   } = props;
   return (
     <View style={modalAppStyles.centeredView}>
@@ -45,23 +51,44 @@ const ModalApp = (props) => {
                 iconSize={22}
                 iconColor="#484848"
               />
-              <Text style={modalAppStyles.title}>Tu viaje en TrasladAPP</Text>
+              <Text style={modalAppStyles.title}>{modo}</Text>
             </View>
-            <AddressContainer />
-            <CustomSeperator
-              styleContainer="sheetContainer"
-              styleSeparator="sheetSeparator"
-            />
+            {modo == "Tu viaje en TrasladAPP" ? (
+              <>
+                <AddressContainer />
+                <CustomSeperator
+                  styleContainer="sheetContainer"
+                  styleSeparator="sheetSeparator"
+                />
+                <DestinyListContainer />
+              </>
+            ) : (
+              <Text>hola mundo</Text>
+            )}
+            <View style={modalAppStyles.submitContainer}>
+              <ButtonReserva
+                text="Continuar"
+                styleContainer="containerSmall"
+                styleButton="confirmacion"
+                styleText="textoConfirmacion"
+                accion={() => {
+                  console.log("press");
+                }}
+              />
+            </View>
           </View>
         </View>
       </Modal>
       <OpenModal
         text={text}
         styleContainer={styleContainer}
+        styleButton={styleButton}
+        styleText={styleText}
         iconName={iconName}
         iconType={iconType}
         iconSize={iconSize}
         iconColor={iconColor}
+        modo={modo}
         accion={() => {
           close();
           setModalVisible(true);
